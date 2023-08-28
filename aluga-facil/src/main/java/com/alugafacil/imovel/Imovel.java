@@ -30,6 +30,10 @@ public class Imovel {
         return proprietario;
     }
 
+    public void setAlugado(boolean alugado) {
+        this.alugado = alugado;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
