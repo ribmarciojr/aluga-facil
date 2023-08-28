@@ -13,7 +13,13 @@ public class Imovel {
     private int comodos;
     private boolean alugado = false;
 
-    public Imovel(String local, BigDecimal valor, int qntdQuartos, int comodos) {
+    public Imovel(
+            Proprietario proprietario,
+            String local,
+            BigDecimal valor,
+            int qntdQuartos,
+            int comodos) {
+        this.proprietario = proprietario;
         this.endereco = local;
         this.valor = valor;
         this.qntdQuartos = qntdQuartos;
@@ -39,5 +45,16 @@ public class Imovel {
     @Override
     public int hashCode() {
         return Objects.hash(endereco, valor, qntdQuartos, comodos, alugado);
+    }
+
+    @Override
+    public String toString() {
+        return "Imovel{" +
+                "endereco='" + endereco + '\'' +
+                ", valor=" + valor +
+                ", qntdQuartos=" + qntdQuartos +
+                ", comodos=" + comodos +
+                ", alugado=" + alugado +
+                '}';
     }
 }
