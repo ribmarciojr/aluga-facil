@@ -22,4 +22,13 @@ public class Inquilino {
         imovel.setAlugado(true);
         return this.imoveis.add(imovel);
     }
+
+    @Override
+    public String toString() {
+        return "Inquilino{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", imoveis=" + imoveis +
+                '}';
+    }
 }

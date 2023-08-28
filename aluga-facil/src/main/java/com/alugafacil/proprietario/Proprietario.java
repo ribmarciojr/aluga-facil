@@ -16,6 +16,10 @@ public class Proprietario {
         this.cpf = cpf;
     }
 
+    public Set<Imovel> getImoveis() {
+        return imoveis;
+    }
+
     public boolean adicionaImovel(Imovel imovel) {
         Objects.requireNonNull(imovel, "Você precisa adicionar um imóvel válido");
         return this.imoveis.add(imovel);
