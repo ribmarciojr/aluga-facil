@@ -32,6 +32,10 @@ public class Proprietario {
         return this.imoveis.remove(imovel);
     }
 
+    public int quantidadeDeImoveis() {
+        return this.imoveis.size();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -43,5 +47,14 @@ public class Proprietario {
     @Override
     public int hashCode() {
         return Objects.hash(nome, cpf);
+    }
+
+    @Override
+    public String toString() {
+        return "Proprietario{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", imoveis=" + imoveis +
+                '}';
     }
 }
