@@ -23,6 +23,12 @@ public class Inquilino {
         return this.imoveis.add(imovel);
     }
 
+    public void acessaNomesDosProprietariosDeImoveisAlugados() {
+        for (Imovel imovel : this.imoveis) {
+            System.out.printf(imovel.getProprietario().getNome());
+        }
+    }
+
     @Override
     public String toString() {
         return "Inquilino{" +
