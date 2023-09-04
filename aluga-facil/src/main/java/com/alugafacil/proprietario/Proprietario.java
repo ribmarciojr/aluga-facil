@@ -16,10 +16,6 @@ public class Proprietario {
         this.cpf = cpf;
     }
 
-    public Set<Imovel> getImoveis() {
-        return imoveis;
-    }
-
     public boolean adicionaImovel(Imovel imovel) {
         Objects.requireNonNull(imovel, "Você precisa adicionar um imóvel válido");
         return this.imoveis.add(imovel);
@@ -38,6 +34,19 @@ public class Proprietario {
 
     public int quantidadeDeImoveis() {
         return this.imoveis.size();
+    }
+
+    public boolean imovelJaFoiAlugado(Imovel imovel) {
+        Objects.requireNonNull(imovel, "consulte um imóvel válido");
+        return imovel.isAlugado();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Set<Imovel> getImoveis() {
+        return imoveis;
     }
 
     @Override
