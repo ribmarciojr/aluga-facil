@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Imovel {
     private Proprietario proprietario;
-    private String endereco; // TODO: trabalhar com objeto 'Endereco'?
+    private String endereco;
     private BigDecimal valor;
     private int qntdQuartos;
     private int comodos;
@@ -15,15 +15,19 @@ public class Imovel {
 
     public Imovel(
             Proprietario proprietario,
-            String local,
+            String endereco,
             BigDecimal valor,
             int qntdQuartos,
             int comodos) {
         this.proprietario = proprietario;
-        this.endereco = local;
+        this.endereco = endereco;
         this.valor = valor;
         this.qntdQuartos = qntdQuartos;
         this.comodos = comodos;
+    }
+
+    public boolean isAlugado() {
+        return alugado;
     }
 
     public Proprietario getProprietario() {

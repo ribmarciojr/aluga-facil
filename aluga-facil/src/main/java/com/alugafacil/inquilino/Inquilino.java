@@ -25,7 +25,7 @@ public class Inquilino {
 
     public void acessaNomesDosProprietariosDeImoveisAlugados() {
         for (Imovel imovel : this.imoveis) {
-            System.out.printf(imovel.getProprietario().getNome());
+            System.out.println(imovel.getProprietario().getNome());
         }
     }
 

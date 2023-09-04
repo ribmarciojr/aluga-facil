@@ -37,7 +37,10 @@ public class Proprietario {
     }
 
     public boolean imovelJaFoiAlugado(Imovel imovel) {
-        Objects.requireNonNull(imovel, "consulte um imóvel válido");
+        Objects.requireNonNull(imovel, "Consulte um imóvel válido");
+        if (!imovel.getProprietario().equals(this)) {
+            throw new IllegalArgumentException("Imóvel não pertence ao este proprietário");
+        }
         return imovel.isAlugado();
     }
 
