@@ -2,6 +2,7 @@ package com.alugafacil.inquilino;
 
 import com.alugafacil.imovel.Imovel;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -18,7 +19,16 @@ public class Inquilino {
 
     public boolean alugaImovel(Imovel imovel) {
         Objects.requireNonNull(imovel, "Você precisa alugar um imóvel válido");
-        // TODO: verificar se o imóvel está realmente disponível antes de settar como alugado
+        // TODO: verificar se o imóvel está realmente disponível antes de settar como alugado ???
+        
+        if(imovel.getAgenciaStatus()){
+            imovel.getAgencia().aumentarSaldo(imovel.getValor().multiply(imovel.getAgencia().getTaxa()));
+
+
+        } else {
+            imovel.getProprietario().aumentarSaldo(imovel.getValor());
+        }
+
         imovel.setAlugado(true);
         return this.imoveis.add(imovel);
     }
