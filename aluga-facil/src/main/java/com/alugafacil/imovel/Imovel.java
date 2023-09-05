@@ -1,5 +1,6 @@
 package com.alugafacil.imovel;
 
+import com.alugafacil.agencia.Agencia;
 import com.alugafacil.proprietario.Proprietario;
 
 import java.math.BigDecimal;
@@ -12,6 +13,9 @@ public class Imovel {
     private int qntdQuartos;
     private int comodos;
     private boolean alugado = false;
+    private Agencia agencia;
+    private boolean temAgencia;
+
 
     public Imovel(
             Proprietario proprietario,
@@ -24,6 +28,38 @@ public class Imovel {
         this.valor = valor;
         this.qntdQuartos = qntdQuartos;
         this.comodos = comodos;
+    }
+
+    public Imovel(
+            Proprietario proprietario,
+            String endereco,
+            BigDecimal valor,
+            int qntdQuartos,
+            int comodos, Agencia agencia) {
+        this.proprietario = proprietario;
+        this.endereco = endereco;
+        this.valor = valor;
+        this.qntdQuartos = qntdQuartos;
+        this.comodos = comodos;
+        this.agencia = agencia;
+        this.temAgencia = true;
+    }
+
+    public boolean getAgenciaStatus(){
+        return this.temAgencia;
+    }
+
+    public Agencia getAgencia(){
+        return agencia;
+    }
+
+    public BigDecimal getValor(){
+        return this.valor;
+    }
+
+    public void setAgencia(Agencia agencia){
+        this.agencia = agencia;
+        this.temAgencia = true;
     }
 
     public boolean isAlugado() {
