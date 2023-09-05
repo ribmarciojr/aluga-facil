@@ -2,6 +2,7 @@ package com.alugafacil.proprietario;
 
 import com.alugafacil.imovel.Imovel;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -10,11 +11,18 @@ public class Proprietario {
     private final String nome;
     private final String cpf;
     private Set<Imovel> imoveis = new HashSet<>();
+    private BigDecimal saldo;
+
 
     public Proprietario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
+
+    public void aumentarSaldo(BigDecimal saldo){
+        this.saldo.add(saldo);
+    }
+
 
     public boolean adicionaImovel(Imovel imovel) {
         Objects.requireNonNull(imovel, "Você precisa adicionar um imóvel válido");
